@@ -37,6 +37,36 @@ public class Util {
 		}
 	}
 	
+	public static String controlUser(HttpServletRequest req, String page) {
+		
+		// cookie control
+		if(req.getCookies() != null) {
+			Cookie[] arr = req.getCookies();
+			for (Cookie item : arr) {
+				if(item.getName().equals("user_cookie")) {
+					String uid = item.getValue();
+					req.getSession().setAttribute("uid", uid);
+					break;
+				}
+			}
+		}
+		
+		boolean statu = req.getSession().getAttribute("uid") == null;
+		if(statu) {
+			return "redirect:/login";
+		}else {
+			if (page.contains("redirect:")) {
+				link = page;
+				return page;
+			}else {
+				link = page;
+				return "/"+page;
+			}
+			
+			
+		}
+	}
+	
 	public static String MD5(String md5) {
 		   try {
 			java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");

@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
                                          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
- <session-factory name="">
+ <session-factory name="dbConnect">
   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
   <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/foodtown?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true</property>
@@ -22,7 +22,16 @@
   <property name="hibernate.transaction.coordinator_class">jdbc</property>
   <property name="hibernate.current_session_context_class">thread</property>
   <property name="hibernate.hbm2ddl.auto">update</property>
-  <mapping class="model.Admin"/>
-  <mapping class="model.Product"/>
+  <mapping class="com.works.model.Categories"/>
+  <mapping class="com.works.model.Product"/>
+  <mapping class="com.works.model.Admin"/>
+  <mapping class="com.works.model.User"/>
+  <mapping class="com.works.model.Blog"/>
+  <mapping class="com.works.model.Fcomment"/>
+  <mapping class="com.works.model.Bcomment"/>
+  <mapping class="com.works.model.Cart"/>
+  <mapping class="com.works.model.Order"/>
+  <mapping class="com.works.model.Contact"/>
+  <mapping class="com.works.model.Api"/>
  </session-factory>
 </hibernate-configuration>
