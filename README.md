@@ -1,5 +1,5 @@
 # Spring FoodTown Project
-This project containes Spring MVC and Hibernate using.
+This project was created in Spring MVC, Spring Security, Hibernate and RestAPI.
 And Services..
 
 
